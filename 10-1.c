@@ -1,25 +1,18 @@
 #include<stdio.h>
-#include<string.h>//strlen関数を使用するための許可書
 
-int reverse(char **);
-
-int main(){
-  char s[100000];
-  char *a[]="erase";
-  char *b[]="eraser";
-  char *c[]="dream";
-  char *d[]="dreamer";
-  scanf("%s", s);
-
-  reverse(a);
+void adjust_point(int *n){
+  if(*n<0){
+    *n=0;
+  }
+  else if(*n>100){
+    *n=100;
+  }
 }
 
-int reverse(char **p){
-  int i,count;
-  count = strlen(p);
+int main(){
+  int i;
+  scanf("%d",&i);
+  adjust_point(&i);
+  printf("%d",i);
 
-  for(i=0;i<count;i++){
-    p[i]=p[count-i];
-  }
-  printf("%s",p[i]);
 }
